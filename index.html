@@ -18,6 +18,14 @@
     height: 500px;
     border: 1px dashed;
   }
+  
+  .table {
+    position: absolute;
+    bottom: 0px;
+    width: 500px;
+    height: 175px;
+    background: #574157;
+  }
 
   .can_rect {
     position: absolute;
@@ -198,7 +206,7 @@
     background: #807d6c;
   }
 
-  .cup_blstr1 {
+  .cup1_blstr1 {
     position: absolute;
     right: 80px;
     top: 65px;
@@ -210,7 +218,7 @@
     clip-path: ellipse(calc(var(--c)*1%) 100% at top);
   }
 
-  .cup_blstr2 {
+  .cup1_blstr2 {
     position: absolute;
     transform: skew(-6deg);
     right: 83px;
@@ -223,13 +231,13 @@
     clip-path: ellipse(calc(var(--c)*1%) 100% at top);
   }
 
-  .cup_blstr3 {
+  .cup1_blstr3 {
     position: absolute;
-    transform: skew(-6deg);
+    transform: skew(-7deg);
     right: 90px;
     top: 130px;
     --c: 85;
-    width: 80px;
+    width: 82px;
     aspect-ratio: 8/2;
     background: #2b3f99;
     mask: radial-gradient(calc(var(--c)*1%) 100% at 50% calc(-100%*cos(asin(50/var(--c)))), #0000 calc(100% - 1px), #000);
@@ -239,13 +247,24 @@
   .cup_rtri {
     position: absolute;
     transform: skew(6deg);
-    right: 95px;
-    top: 64px;
+    right: 98px;
+    top: 60px;
     width: 0;
     height: 0;
-    border-top: 40px solid transparent;
+    border-top: 45px solid transparent;
     border-left: 80px solid #cf361b;
-    border-bottom: 40px solid transparent;
+    border-bottom: 42px solid transparent;
+  }
+
+  .star {
+    position: absolute;
+    transform: skew(6deg);
+    right: 140px;
+    top: 90px;
+    width: 30px;
+    aspect-ratio: 1;
+    background: #f5f0e1;
+    clip-path: polygon(50% 0, 79% 90%, 2% 35%, 98% 35%, 21% 90%);
   }
 
   .cup_base2 {
@@ -266,6 +285,44 @@
     height: 15px;
     border-radius: 40%;
     background: #807d6c;
+  }
+  
+  .cup2_blstr1 {
+    position: absolute;
+    left: 150px;
+    bottom: 137px;
+    --c: 85;
+    width: 95px;
+    aspect-ratio: 8/2;
+    background: #2b3f99;
+    mask: radial-gradient(calc(var(--c)*1%) 100% at 50% calc(-100%*cos(asin(50/var(--c)))), #0000 calc(100% - 1px), #000);
+    clip-path: ellipse(calc(var(--c)*1%) 100% at top);
+  }
+
+  .cup2_blstr2 {
+    position: absolute;
+    transform: skew(8deg);
+    left: 152px;
+    bottom: 104px;
+    --c: 85;
+    width: 90px;
+    aspect-ratio: 8/2;
+    background: #2b3f99;
+    mask: radial-gradient(calc(var(--c)*1%) 100% at 50% calc(-100%*cos(asin(50/var(--c)))), #0000 calc(100% - 1px), #000);
+    clip-path: ellipse(calc(var(--c)*1%) 100% at top);
+  }
+
+  .cup2_blstr3 {
+    position: absolute;
+    transform: skew(10deg);
+    left: 160px;
+    bottom: 74px;
+    --c: 85;
+    width: 82px;
+    aspect-ratio: 8/2;
+    background: #2b3f99;
+    mask: radial-gradient(calc(var(--c)*1%) 100% at 50% calc(-100%*cos(asin(50/var(--c)))), #0000 calc(100% - 1px), #000);
+    clip-path: ellipse(calc(var(--c)*1%) 100% at top);
   }
 
   .cup_handle {
@@ -309,11 +366,50 @@
     border-radius: 40%;
     background: #807d6c;
   }
+  
+  .cup3_blstr1 {
+    position: absolute;
+    left: 150px;
+    bottom: 222px;
+    --c: 85;
+    width: 95px;
+    aspect-ratio: 8/2;
+    background: #2b3f99;
+    mask: radial-gradient(calc(var(--c)*1%) 100% at 50% calc(-100%*cos(asin(50/var(--c)))), #0000 calc(100% - 1px), #000);
+    clip-path: ellipse(calc(var(--c)*1%) 100% at top);
+  }
+
+  .cup3_blstr2 {
+    position: absolute;
+    transform: skew(8deg);
+    left: 152px;
+    bottom: 192px;
+    --c: 85;
+    width: 90px;
+    aspect-ratio: 8/2;
+    background: #2b3f99;
+    mask: radial-gradient(calc(var(--c)*1%) 100% at 50% calc(-100%*cos(asin(50/var(--c)))), #0000 calc(100% - 1px), #000);
+    clip-path: ellipse(calc(var(--c)*1%) 100% at top);
+  }
+
+  .cup3_blstr3 {
+    position: absolute;
+    transform: skew(13deg);
+    left: 160px;
+    bottom: 160px;
+    --c: 85;
+    width: 83px;
+    aspect-ratio: 8/2;
+    background: #2b3f99;
+    mask: radial-gradient(calc(var(--c)*1%) 100% at 50% calc(-100%*cos(asin(50/var(--c)))), #0000 calc(100% - 1px), #000);
+    clip-path: ellipse(calc(var(--c)*1%) 100% at top);
+  }
 </style>
 
 
 <div class="frame">
   <!-- add your elements here -->
+  <div class="table"></div>
   <div class="pot_base"></div>
   <div class="pot_spout"></div>
   <div class="spout_inner"></div>
@@ -328,6 +424,12 @@
   <div class="cup_inner2"></div>
   <div class="cup_base3"></div>
   <div class="cup_inner3"></div>
+  <div class="cup2_blstr1"></div>
+  <div class="cup2_blstr2"></div>
+  <div class="cup2_blstr3"></div>
+  <div class="cup3_blstr1"></div>
+  <div class="cup3_blstr2"></div>
+  <div class="cup3_blstr3"></div>
   <div class="can_rect"></div>
   <div class="can_ellipse1"></div>
   <div class="can_ellipse2"></div>
@@ -336,9 +438,10 @@
   <div class="cup_base1"></div>
   <div class="cup_inner1"></div>
   <div class="can_red"></div>
-  <div class="cup_blstr1"></div>
-  <div class="cup_blstr2"></div>
-  <div class="cup_blstr3"></div>
+  <div class="cup1_blstr1"></div>
+  <div class="cup1_blstr2"></div>
+  <div class="cup1_blstr3"></div>
   <div class="cup_rtri"></div>
+  <div class="star"></div>
 
 </div>
