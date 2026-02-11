@@ -58,6 +58,18 @@
     background: #ffe89c;
   }
 
+  .can_red {
+    position: absolute;
+    right: 60px;
+    bottom: 70px;
+    --c: 85;
+    width: 200px;
+    aspect-ratio: 6/3;
+    background: #cf361b;
+    mask: radial-gradient(calc(var(--c)*1%) 100% at 50% calc(-100%*cos(asin(50/var(--c)))), #0000 calc(100% - 1px), #000);
+    clip-path: ellipse(calc(var(--c)*1%) 100% at top);
+  }
+
   .pot_base {
     position: absolute;
     left: 40px;
@@ -132,10 +144,11 @@
     position: absolute;
     left: 210px;
     top: 50px;
-    --p: 20px; /* control the shape (can be percentage) */
+    --p: 20px;
+    /* control the shape (can be percentage) */
     height: 40px;
     aspect-ratio: 4/3;
-    clip-path: polygon(var(--p) 100%,calc(100% - var(--p)) 100%,100% 0,0 0);
+    clip-path: polygon(var(--p) 100%, calc(100% - var(--p)) 100%, 100% 0, 0 0);
     background: #f06335;
   }
 
@@ -152,7 +165,19 @@
     mask: radial-gradient(100% calc(var(--c)*1%) at calc(-100%*cos(asin(50/var(--c)))), #0000 calc(100% - 1px), #000);
     clip-path: ellipse(100% calc(var(--c)*1%) at left);
   }
-  
+
+  .spout_inner {
+    position: absolute;
+    rotate: 20deg;
+    left: 15px;
+    top: 45px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-right: 30px solid #382521;
+    border-bottom: 5px solid transparent;
+  }
+
   .cup_base1 {
     position: absolute;
     right: 80px;
@@ -160,9 +185,9 @@
     width: 100px;
     height: 100px;
     background: #f5f0e1;
-    border-radius: 23% 23% 21% 21% / 8% 8% 80% 80%; 
+    border-radius: 23% 23% 21% 21% / 8% 8% 80% 80%;
   }
-  
+
   .cup_inner1 {
     position: absolute;
     right: 85px;
@@ -172,26 +197,148 @@
     border-radius: 40%;
     background: #807d6c;
   }
-  
+
+  .cup_blstr1 {
+    position: absolute;
+    right: 80px;
+    top: 65px;
+    --c: 85;
+    width: 95px;
+    aspect-ratio: 8/2;
+    background: #2b3f99;
+    mask: radial-gradient(calc(var(--c)*1%) 100% at 50% calc(-100%*cos(asin(50/var(--c)))), #0000 calc(100% - 1px), #000);
+    clip-path: ellipse(calc(var(--c)*1%) 100% at top);
+  }
+
+  .cup_blstr2 {
+    position: absolute;
+    transform: skew(-6deg);
+    right: 83px;
+    top: 100px;
+    --c: 85;
+    width: 90px;
+    aspect-ratio: 8/2;
+    background: #2b3f99;
+    mask: radial-gradient(calc(var(--c)*1%) 100% at 50% calc(-100%*cos(asin(50/var(--c)))), #0000 calc(100% - 1px), #000);
+    clip-path: ellipse(calc(var(--c)*1%) 100% at top);
+  }
+
+  .cup_blstr3 {
+    position: absolute;
+    transform: skew(-6deg);
+    right: 90px;
+    top: 130px;
+    --c: 85;
+    width: 80px;
+    aspect-ratio: 8/2;
+    background: #2b3f99;
+    mask: radial-gradient(calc(var(--c)*1%) 100% at 50% calc(-100%*cos(asin(50/var(--c)))), #0000 calc(100% - 1px), #000);
+    clip-path: ellipse(calc(var(--c)*1%) 100% at top);
+  }
+
+  .cup_rtri {
+    position: absolute;
+    transform: skew(6deg);
+    right: 95px;
+    top: 64px;
+    width: 0;
+    height: 0;
+    border-top: 40px solid transparent;
+    border-left: 80px solid #cf361b;
+    border-bottom: 40px solid transparent;
+  }
+
+  .cup_base2 {
+    position: absolute;
+    left: 150px;
+    bottom: 80px;
+    width: 100px;
+    height: 100px;
+    background: #f5f0e1;
+    border-radius: 23% 23% 21% 21% / 8% 8% 80% 80%;
+  }
+
+  .cup_inner2 {
+    position: absolute;
+    left: 155px;
+    bottom: 160px;
+    width: 90px;
+    height: 15px;
+    border-radius: 40%;
+    background: #807d6c;
+  }
+
+  .cup_handle {
+    position: absolute;
+    right: 130px;
+    top: 56px;
+    rotate: 160deg;
+    --b: 15px;
+    /* the boder thickness */
+    --a: 200deg;
+    /* control the progression */
+
+    width: 80px;
+    aspect-ratio: 1;
+    padding: var(--b);
+    border-radius: 100%;
+    background: #f5f0e1;
+    --_g: /var(--b) var(--b) no-repeat radial-gradient(50% 50%, #000 97%, #0000);
+    mask: top var(--_g),
+      calc(50% + 50%*sin(var(--a))) calc(50% - 50%*cos(var(--a))) var(--_g),
+      linear-gradient(#0000 0 0) content-box intersect,
+      conic-gradient(#000 var(--a), #0000 0);
+  }
+
+  .cup_base3 {
+    position: absolute;
+    left: 150px;
+    bottom: 163px;
+    width: 100px;
+    height: 100px;
+    background: #f5f0e1;
+    border-radius: 23% 23% 21% 21% / 8% 8% 80% 80%;
+  }
+
+  .cup_inner3 {
+    position: absolute;
+    left: 155px;
+    bottom: 245px;
+    width: 90px;
+    height: 15px;
+    border-radius: 40%;
+    background: #807d6c;
+  }
 </style>
 
 
 <div class="frame">
   <!-- add your elements here -->
   <div class="pot_base"></div>
+  <div class="pot_spout"></div>
+  <div class="spout_inner"></div>
   <div class="pot_top"></div>
   <div class="pot_lid"></div>
   <div class="pot_mid"></div>
   <div class="pot_mid_curve"></div>
   <div class="pot_tip"></div>
-  <div class="pot_spout"></div>
   <div class="pot_handle_blk"></div>
   <div class="pot_handle_or"></div>
+  <div class="cup_base2"></div>
+  <div class="cup_inner2"></div>
+  <div class="cup_base3"></div>
+  <div class="cup_inner3"></div>
   <div class="can_rect"></div>
   <div class="can_ellipse1"></div>
   <div class="can_ellipse2"></div>
   <div class="can_light"></div>
+  <div class="cup_handle"></div>
   <div class="cup_base1"></div>
   <div class="cup_inner1"></div>
-  
+  <div class="can_red"></div>
+  <div class="cup_blstr1"></div>
+  <div class="cup_blstr2"></div>
+  <div class="cup_blstr3"></div>
+  <div class="cup_rtri"></div>
+
 </div>
